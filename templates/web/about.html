@@ -1,0 +1,425 @@
+{% extends "web/base.html" %}
+{% load static %}
+
+{% block content %}
+		<div class="about-area gray-bg" id="about">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 mb30">
+						<div class="video-intro primary-shadow">
+							<img src="{% static 'web/images/about/video-intro.jpg' %}" alt="video-intro" />
+							<a class="video-play embedded-popup" href="https://www.youtube.com/watch?v=SZEflIVnhH8">
+								<i class="fa fa-play"></i>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="about-text">	
+							<h4>About The Event</h4>
+							<p>This event is exclusively for them who want to learn & know about material design principales introduced by Google.  Also if you are a designer, then You should know or learn about new design trend like Material Design. Beacuse this is the future of design. In this conferance we will talk about material design like & What you need not to do etc.</p>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="single-about primary-shadow white-bg">
+									<h5>Who we are ?</h5>
+									<p>We are the best designer comunity arond the world. We love to share our knowledge &  expriences</p>
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="single-about primary-shadow white-bg">
+									<h5>Our Misson</h5>
+									<p>We are the best designer comunity arond the world. We love to share our knowledge &  expriences</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+		</div><!-- /.about-area -->
+		
+		<div class="testimonials-area image-bg">
+			<div class="overlay">
+				<div class="container">
+					<div class="sub-heading">
+						<div class="row">
+							<div class="col-md-12">
+								<h4>Testimonals</h4>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="client-pagination" id="testimonial-pager">
+								<a data-slide-index="0" href="">
+									<img src="{% static 'web/images/testimonial/thumbs/1.jpg' %}" alt="client" />
+								</a>
+								<a data-slide-index="1" href="">
+									<img src="{% static 'web/images/testimonial/thumbs/2.jpg' %}" alt="client" />
+								</a>
+								<a data-slide-index="2" href="">
+									<img src="{% static 'web/images/testimonial/thumbs/3.jpg' %}" alt="client" />
+								</a>
+								<a data-slide-index="3" href="">
+									<img src="{% static 'web/images/testimonial/thumbs/4.jpg' %}" alt="client" />
+								</a>
+								<a data-slide-index="4" href="">
+									<img src="{% static 'web/images/testimonial/thumbs/5.jpg' %}" alt="client" />
+								</a>
+								<a data-slide-index="5" href="">
+									<img src="{% static 'web/images/testimonial/thumbs/6.jpg' %}" alt="client" />
+								</a>
+								<a data-slide-index="6" href="">
+									<img src="{% static 'web/images/testimonial/thumbs/7.jpg' %}" alt="client" />
+								</a>
+								<a data-slide-index="7" href="">
+									<img src="{% static 'web/images/testimonial/thumbs/8.jpg' %}" alt="client" />
+								</a>
+								<a data-slide-index="8" href="">
+									<img src="{% static 'web/images/testimonial/thumbs/9.jpg' %}" alt="client" />
+								</a>
+								<a data-slide-index="9" href="">
+									<img src="{% static 'web/images/testimonial/thumbs/10.jpg' %}" alt="client" />
+								</a>
+							</div><!-- /.client-pagination -->
+						</div><!-- /.col -->
+						<div class="col-md-8">
+							<div id="testimonials">
+								<div class="single-testimonial">
+									<div class="row">
+										<div class="col-sm-7 mb30">
+											<blockquote>This is the best event i had ever joined. Most exiting this is speakers are so exprienced & helpfull. Also the decoretion was also very good. In one word 'Just Awesome'</blockquote>
+											<ul class="customer-rating">
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+											</ul>
+											<h4>DEazel Kameru</h4>
+										</div>
+										<div class="col-sm-5">
+											<div class="client-image primary-shadow">
+												<img src="{% static 'web/images/testimonial/1.jpg' %}" alt="client" />
+											</div>
+										</div>
+									</div>
+								</div><!-- /.single-testimonial -->
+								<div class="single-testimonial">
+									<div class="row">
+										<div class="col-sm-7 mb30">
+											<blockquote>This is the best event i had ever joined. Most exiting this is speakers are so exprienced & helpfull. Also the decoretion was also very good. In one word 'Just Awesome'</blockquote>
+											<ul class="customer-rating">
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+											</ul>
+											<h4>DEazel Kameru</h4>
+										</div>
+										<div class="col-sm-5">
+											<div class="client-image primary-shadow">
+												<img src="{% static 'web/images/testimonial/2.jpg' %}" alt="client" />
+											</div>
+										</div>
+									</div>
+								</div><!-- /.single-testimonial -->
+								<div class="single-testimonial">
+									<div class="row">
+										<div class="col-sm-7 mb30">
+											<blockquote>This is the best event i had ever joined. Most exiting this is speakers are so exprienced & helpfull. Also the decoretion was also very good. In one word 'Just Awesome'</blockquote>
+											<ul class="customer-rating">
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+											</ul>
+											<h4>DEazel Kameru</h4>
+										</div>
+										<div class="col-sm-5">
+											<div class="client-image primary-shadow">
+												<img src="{% static 'web/images/testimonial/3.jpg' %}" alt="client" />
+											</div>
+										</div>
+									</div>
+								</div><!-- /.single-testimonial -->
+								<div class="single-testimonial">
+									<div class="row">
+										<div class="col-sm-7 mb30">
+											<blockquote>This is the best event i had ever joined. Most exiting this is speakers are so exprienced & helpfull. Also the decoretion was also very good. In one word 'Just Awesome'</blockquote>
+											<ul class="customer-rating">
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+											</ul>
+											<h4>DEazel Kameru</h4>
+										</div>
+										<div class="col-sm-5">
+											<div class="client-image primary-shadow">
+												<img src="{% static 'web/images/testimonial/4.jpg' %}" alt="client" />
+											</div>
+										</div>
+									</div>
+								</div><!-- /.single-testimonial -->
+								<div class="single-testimonial">
+									<div class="row">
+										<div class="col-sm-7 mb30">
+											<blockquote>This is the best event i had ever joined. Most exiting this is speakers are so exprienced & helpfull. Also the decoretion was also very good. In one word 'Just Awesome'</blockquote>
+											<ul class="customer-rating">
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+											</ul>
+											<h4>DEazel Kameru</h4>
+										</div>
+										<div class="col-sm-5">
+											<div class="client-image primary-shadow">
+												<img src="{% static 'web/images/testimonial/5.jpg' %}" alt="client" />
+											</div>
+										</div>
+									</div>
+								</div><!-- /.single-testimonial -->
+								<div class="single-testimonial">
+									<div class="row">
+										<div class="col-sm-7 mb30">
+											<blockquote>This is the best event i had ever joined. Most exiting this is speakers are so exprienced & helpfull. Also the decoretion was also very good. In one word 'Just Awesome'</blockquote>
+											<ul class="customer-rating">
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+											</ul>
+											<h4>DEazel Kameru</h4>
+										</div>
+										<div class="col-sm-5">
+											<div class="client-image primary-shadow">
+												<img src="{% static 'web/images/testimonial/6.jpg' %}" alt="client" />
+											</div>
+										</div>
+									</div>
+								</div><!-- /.single-testimonial -->
+								<div class="single-testimonial">
+									<div class="row">
+										<div class="col-sm-7 mb30">
+											<blockquote>This is the best event i had ever joined. Most exiting this is speakers are so exprienced & helpfull. Also the decoretion was also very good. In one word 'Just Awesome'</blockquote>
+											<ul class="customer-rating">
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+											</ul>
+											<h4>DEazel Kameru</h4>
+										</div>
+										<div class="col-sm-5">
+											<div class="client-image primary-shadow">
+												<img src="{% static 'web/images/testimonial/7.jpg' %}" alt="client" />
+											</div>
+										</div>
+									</div>
+								</div><!-- /.single-testimonial -->
+								<div class="single-testimonial">
+									<div class="row">
+										<div class="col-sm-7 mb30">
+											<blockquote>This is the best event i had ever joined. Most exiting this is speakers are so exprienced & helpfull. Also the decoretion was also very good. In one word 'Just Awesome'</blockquote>
+											<ul class="customer-rating">
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+											</ul>
+											<h4>DEazel Kameru</h4>
+										</div>
+										<div class="col-sm-5">
+											<div class="client-image primary-shadow">
+												<img src="{% static 'web/images/testimonial/8.jpg' %}" alt="client" />
+											</div>
+										</div>
+									</div>
+								</div><!-- /.single-testimonial -->
+								<div class="single-testimonial">
+									<div class="row">
+										<div class="col-sm-7 mb30">
+											<blockquote>This is the best event i had ever joined. Most exiting this is speakers are so exprienced & helpfull. Also the decoretion was also very good. In one word 'Just Awesome'</blockquote>
+											<ul class="customer-rating">
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+											</ul>
+											<h4>DEazel Kameru</h4>
+										</div>
+										<div class="col-sm-5">
+											<div class="client-image primary-shadow">
+												<img src="{% static 'web/images/testimonial/9.jpg' %}" alt="client" />
+											</div>
+										</div>
+									</div>
+								</div><!-- /.single-testimonial -->
+								<div class="single-testimonial">
+									<div class="row">
+										<div class="col-sm-7 mb30">
+											<blockquote>This is the best event i had ever joined. Most exiting this is speakers are so exprienced & helpfull. Also the decoretion was also very good. In one word 'Just Awesome'</blockquote>
+											<ul class="customer-rating">
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+												<li><i class="fa fa-star"></i></li>
+											</ul>
+											<h4>DEazel Kameru</h4>
+										</div>
+										<div class="col-sm-5">
+											<div class="client-image primary-shadow">
+												<img src="{% static 'web/images/testimonial/10.jpg' %}" alt="client" />
+											</div>
+										</div>
+									</div>
+								</div><!-- /.single-testimonial -->
+							</div><!-- /#testimonials -->
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+				</div><!-- /.container -->
+			</div><!-- /.overlay -->
+		</div><!-- /.testimonials-area -->
+		
+		<div class="featured-speakers-area page-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="single-featured-speaker primary-shadow white-bg">
+							<div class="row no-margin">
+								<div class="col-sm-6 no-padding">
+									<div class="speaker-cover">
+										<img src="{% static 'web/images/speakers/featured/1.jpg' %}" alt="speakers" />
+										<div class="speaker-over">
+											<ul>
+												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+												<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+												<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6 no-padding">
+									<div class="about-speaker">
+										<h6>Event Organizer</h6>
+										<h4>Ethan Taylor</h4>
+										<p>The way of Learning Design is all about the way you look on anything you see, or how you do imagine about somthing in your dream , also you need to be creative .</p>
+										<a href="" data-toggle="modal" data-target="#fSpeaker-1">More About Me</a>
+									</div>
+								</div>
+								<div class="modal fade" id="fSpeaker-1" tabindex="-1">
+									<div class="container">
+										<div class="row">
+											<div class="col-md-2"></div>
+											<div class="col-md-8">
+												<div class="speaker-details white-bg primary-shadow">
+													<div class="row no-margin">
+														<div class="col-sm-5 no-padding">
+															<div class="speaker-images-slider">
+																<img src="{% static 'web/images/speakers/featured/1.jpg' %}" alt="speaker" />
+															</div>
+														</div>
+														<div class="col-sm-7 no-padding">
+															<div class="speaker-details-texts">
+																<div class="sdt-top">
+																	<h4>Ethan Taylor</h4>
+																	<h6>Event Organizer</h6>
+																	<ul>
+																		<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+																		<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+																		<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+																	</ul>
+																</div>
+																<div class="sdt-bottom">
+																	<p>The way of Learning Design is all about the way you look on anything you see, or how you do imagine about somthing in your dream , also you need to be creative . Now if you want to join this then good luck.</p>
+																	<a href="" class="button alt small" data-dismiss="modal">Close</a>
+																</div>
+															</div>
+														</div>
+													</div><!-- /.row -->
+												</div><!-- /.speaker-details -->
+											</div>
+											<div class="col-md-2"></div>
+										</div><!-- /.row -->
+									</div><!-- /.container -->
+								</div><!-- /.modal -->
+							</div>
+						</div>
+					</div><!-- /.col -->
+					<div class="col-md-6">
+						<div class="single-featured-speaker primary-shadow white-bg">
+							<div class="row no-margin">
+								<div class="col-sm-6 no-padding">
+									<div class="speaker-cover">
+										<img src="{% static 'web/images/speakers/featured/2.jpg' %}" alt="speakers" />
+										<div class="speaker-over">
+											<ul>
+												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+												<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+												<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6 no-padding">
+									<div class="about-speaker">
+										<h6>Title Sponsor</h6>
+										<h4>Thomas Kelly</h4>
+										<p>The way of Learning Design is all about the way you look on anything you see, or how you do imagine about somthing in your dream , also you need to be creative .</p>
+										<a href="" data-toggle="modal" data-target="#fSpeaker-2">More About Me</a>
+									</div>
+								</div>
+								<div class="modal fade" id="fSpeaker-2" tabindex="-1">
+									<div class="container">
+										<div class="row">
+											<div class="col-md-2"></div>
+											<div class="col-md-8">
+												<div class="speaker-details white-bg primary-shadow">
+													<div class="row no-margin">
+														<div class="col-sm-5 no-padding">
+															<div class="speaker-images-slider">
+																<img src="{% static 'web/images/speakers/featured/2.jpg' %}" alt="speaker" />
+															</div>
+														</div>
+														<div class="col-sm-7 no-padding">
+															<div class="speaker-details-texts">
+																<div class="sdt-top">
+																	<h4>Thomas Kelly</h4>
+																	<h6>Title Sponsor</h6>
+																	<ul>
+																		<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+																		<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+																		<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+																	</ul>
+																</div>
+																<div class="sdt-bottom">
+																	<p>The way of Learning Design is all about the way you look on anything you see, or how you do imagine about somthing in your dream , also you need to be creative . Now if you want to join this then good luck.</p>
+																	<a href="" class="button alt small" data-dismiss="modal">Close</a>
+																</div>
+															</div>
+														</div>
+													</div><!-- /.row -->
+												</div><!-- /.speaker-details -->
+											</div>
+											<div class="col-md-2"></div>
+										</div><!-- /.row -->
+									</div><!-- /.container -->
+								</div><!-- /.modal -->
+							</div>
+						</div>
+					</div><!-- /.col -->
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+		</div><!-- /.featured-speakers-area -->
+
+		{% endblock %}

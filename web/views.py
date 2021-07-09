@@ -1,34 +1,35 @@
 from django.shortcuts import render
 from .models import *
-
+import datetime
 
 # Create your views here.
 def page_not_found_view(request):
      return render(request,'web/404.html')
 
 def Home(request):
-    event = Event.objects.all()
-    eventdate = Event.objects.all()
+
+    eventday1 = Event.objects.filter(Mulai__date= datetime.date(2021, 11, 24))
+    eventday2 = Event.objects.filter(Mulai__date= datetime.date(2021, 11, 25))
     pembicara = Pembicara.objects.all().distinct()[:4]
-    listpembicara = ListPembicara.objects.all()
+
     artikel = Artikel.objects.all().distinct()[:3]
 
     context = {
-        "event": event,
-        "eventdate": eventdate,
+        "event": eventday2,
+        "eventdate": eventday1,
         "pembicara": pembicara,
-        "listpembicara": listpembicara,
+
         "artikel": artikel,
     }
     return render(request, "web/index.html", context)
 
 def event(request):
     event = Event.objects.all()
-    listpembicara = ListPembicara.objects.all()
+
 
     context = {
         "event": event,
-        "listpembicara": listpembicara,
+
     }
     return render(request, "web/schedule.html", context)
 

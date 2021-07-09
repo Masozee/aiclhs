@@ -4,36 +4,11 @@ from tinymce.models import HTMLField
 from taggit.managers import TaggableManager
 
 # Create your models here.
-class Event(models.Model):
-    Judul = models.CharField(max_length=100)
-    Slug = models.SlugField(default='', editable=False, max_length=140)
-    Mulai = models.DateTimeField()
-    Selesai = models.DateTimeField(blank=True)
-    Lokasi = models.TextField(blank=True)
-    Link = models.URLField(blank=True)
-    Keterangan = models.TextField(blank=True)
-
-    def __str__(self):
-        return self.Judul
-
-    class Meta:
-        verbose_name = ("Acara")
-        verbose_name_plural = ("Acara")
-
-    def save(self, *args, **kwargs):
-        value = self.Judul
-        self.Slug = slugify(value, allow_unicode=True)
-        super().save(*args, **kwargs)
-
-    @property
-    def waktu(self):
-        return self.Mulai.strftime('%d-%B-%Y')
-               
-
 class Pembicara(models.Model):
     Nama = models.CharField(max_length=100)
     Slug = models.SlugField(default='', editable=False, max_length=140)
     Pekerjaan = models.CharField(max_length=100)
+    Perusahaan = models.CharField(max_length=100)
     Deskripsi_singkat = models.TextField(blank=True)
     Foto = models.ImageField(upload_to='web/')
     Email = models.EmailField(blank=True)
@@ -53,18 +28,38 @@ class Pembicara(models.Model):
     def save(self, *args, **kwargs):
         value = self.Nama
         self.Slug = slugify(value, allow_unicode=True)
-        super().save(*args, **kwargs)            
+        super().save(*args, **kwargs)
 
-class ListPembicara(models.Model):
-    Acara = models.ForeignKey(Event, on_delete=models.PROTECT)
-    Pembicara = models.ForeignKey(Pembicara, on_delete=models.PROTECT)
+class Event(models.Model):
+    Judul = models.CharField(max_length=100)
+    Slug = models.SlugField(default='', editable=False, max_length=140)
+    Mulai = models.DateTimeField()
+    Selesai = models.DateTimeField(blank=True)
+    Pembicara = models.ForeignKey(Pembicara, on_delete=models.PROTECT ,null=True)
+    Lokasi = models.TextField(blank=True)
+    Link = models.URLField(blank=True)
+    Keterangan = models.TextField(blank=True)
 
     def __str__(self):
-        return str(self.Acara) + ' - ' + str(self.Pembicara)
+        return self.Judul
 
     class Meta:
-        verbose_name = ("Daftar Pembicara")
-        verbose_name_plural = ("Daftar Pembicara")       
+        verbose_name = ("Acara")
+        verbose_name_plural = ("Acara")
+
+    def save(self, *args, **kwargs):
+        value = self.Judul
+        self.Slug = slugify(value, allow_unicode=True)
+        super().save(*args, **kwargs)
+
+    @property
+    def waktu(self):
+        return self.Mulai.strftime('%d-%B-%Y')
+    def jammulai(self):
+        return self.Mulai.strftime('%H:%M')
+    def jamselesai(self):
+        return self.Selesai.strftime('%H:%M')
+
 
 class Artikel(models.Model):
     Judul = models.CharField(max_length=150)

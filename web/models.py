@@ -17,6 +17,7 @@ class Pembicara(models.Model):
     Linkedin = models.URLField(blank=True)
     Instagram = models.URLField(blank=True)
     Keterangan = models.TextField(blank=True)
+    keynote = models.BooleanField(default=True)
 
     def __str__(self):
         return self.Nama
@@ -78,4 +79,24 @@ class Artikel(models.Model):
     def save(self, *args, **kwargs):
         value = self.Judul
         self.Slug = slugify(value, allow_unicode=True)
-        super().save(*args, **kwargs)        
+        super().save(*args, **kwargs)
+
+
+class Sponsor(models.Model):
+    UNIVERSITY = '0'
+    CORPORATE = '1'
+    MEDIA = '2'
+
+    KATEGORI_CHOICES = (
+        (UNIVERSITY, 'University Sponsors'),
+        (CORPORATE, 'Corporate Sponsors'),
+        (MEDIA, 'Media Sponsors'),
+    )
+
+    nama = models.CharField(max_length=100)
+    logo = models.ImageField(upload_to='web/logosponsor')
+    kategori = models.CharField(max_length=1, choices=KATEGORI_CHOICES, default=0)
+    keterangan = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.nama

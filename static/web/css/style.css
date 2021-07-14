@@ -116,6 +116,12 @@ img{
 }
 
 /* Common CSS */
+.card-tema{
+	height: 100px;
+	weight: 100px;
+	padding-bottom: 200px;
+	padding-top: 10px;
+}
 
 .no-padding{
 	padding:0;
@@ -521,6 +527,9 @@ p span{
 .single-about{
 	padding:23px 25px 13px;
 	margin-top:17px;
+	height: 150px;
+	padding-top: 10px;
+
 }
 .single-about h5{
 	text-transform:uppercase;

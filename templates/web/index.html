@@ -8,12 +8,12 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12">
-								<h3>24 - 25 November 2021 , <span>Jakarta</span></h3>
-								<h1><small>Atma Jaya</small></h1>
+								<h3>24 - 25 November 2021, <span>Jakarta</span></h3>
+								<h1><small></small></h1>
 								<h1 >International Conference on Current Legal Issue and Human Security</h1>
 								<ul class="buttons">
-									<li><a href="#" class="line-button">Register Now</a></li>
-									<li><a href="#" class="line-button">Learn More</a></li>
+									<li><a href="https://rebrand.ly/iclhs-registration" class="line-button">Register Now</a></li>
+									<li><a href="https://rebrand.ly/iclhs-submission" class="line-button">Call for Paper</a></li>
 								</ul>
 							</div>
 						</div>
@@ -26,29 +26,69 @@
 		<div class="about-area gray-bg" id="about">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-6 mb30">
-						<div class="video-intro primary-shadow">
-							<img src="{% static 'web/images/about/video-intro.jpg' %}" alt="video-intro" />
-							<a class="video-play embedded-popup" href="https://www.youtube.com/watch?v=SZEflIVnhH8">
-								<i class="fa fa-play"></i>
-							</a>
-						</div>
+					<div class="col-md-4 mt-5" style="padding-top: 80px">
+							<img src="{% static 'web/images/about/video-intro.png' %}" alt="video-intro" />
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-8">
 						<div class="about-text">	
 							<h4>About The Event</h4>
-							<p>This event is exclusively for them who want to learn & know about material design principales introduced by Google.  Also if you are a designer, then You should know or learn about new design trend like Material Design. Beacuse this is the future of design. In this conferance we will talk about material design like & What you need not to do etc.</p>
+							<p>When Covid-19 struck in the middle of 2020, Several countries have adopted new adaptation strategies in fighting the pandemic in the year 2021,  Many countries implement adaptation methods such as making vaccines available to their citizens through thorough distribution.  Including indonesia, while Indonesia doesn't self-produce vaccines, the country proclaimed itself to be the fourth country to do mass vaccinations among its citizens. but Whether Indonesia and the international community are doing enough.</p>
+                            <p>The incident above is part of the human security problem.  "Human Security," freedom from fear, and the freedom of desires along with this concept were then added as the cornerstones of this concept. Consequently, we can recognize an important paradigm shift between "security" and "development". Individuals will now take center stage, demonstrating the previously state-centric nature of the previous approach.
+                            The key message from the International Conference is highlighted by this exhortation. As discussed above, Human Security is both development and protection, which encompasses widespread and non-military security concerns. based on the background Human Security will be the topic of the International Conference on "International Conference On Current Legal Issue And Human Security"
+                            </p>
+                            <div class="become-sponsor">
+                                <a href="" class="button alt"  data-toggle="modal" data-target="#sponsor-form">Read more</a>
+                            </div>
 						</div>
+					</div>
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+		</div><!-- /.about-area -->
+		<div class="about-area " id="about">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-md-12">
 						<div class="row">
-							<div class="col-sm-6">
+							<div class="col-sm-3 card-tema">
 								<div class="single-about primary-shadow white-bg">
-									<h5>Who we are ?</h5>
+									<h5>Business & Human Security</h5>
 									<p>We are the best designer comunity arond the world. We love to share our knowledge &  expriences</p>
 								</div>
 							</div>
-							<div class="col-sm-6">
+							<div class="col-sm-3 card-tema">
 								<div class="single-about primary-shadow white-bg">
-									<h5>Our Misson</h5>
+									<h5>Environment & Human Security</h5>
+									<p>We are the best designer comunity arond the world. We love to share our knowledge &  expriences</p>
+								</div>
+							</div>
+							<div class="col-sm-3 card-tema">
+								<div class="single-about primary-shadow white-bg">
+									<h5>Human Security & Gender Issue</h5>
+									<p>We are the best designer comunity arond the world. We love to share our knowledge &  expriences</p>
+								</div>
+							</div>
+							<div class="col-sm-3 card-tema">
+								<div class="single-about primary-shadow white-bg">
+									<h5>Human Security on minorities</h5>
+									<p>We are the best designer comunity arond the world. We love to share our knowledge &  expriences</p>
+								</div>
+							</div>
+							<div class="col-sm-3 card-tema">
+								<div class="single-about primary-shadow white-bg">
+									<h5>Human Security on Technology</h5>
+									<p>We are the best designer comunity arond the world. We love to share our knowledge &  expriences</p>
+								</div>
+							</div>
+							<div class="col-sm-3 card-tema">
+								<div class="single-about primary-shadow white-bg">
+									<h5>Human security on International Politics</h5>
+									<p>We are the best designer comunity arond the world. We love to share our knowledge &  expriences</p>
+								</div>
+							</div>
+							<div class="col-sm-3 card-tema">
+								<div class="single-about primary-shadow white-bg">
+									<h5>Human Security on Judicial Services</h5>
 									<p>We are the best designer comunity arond the world. We love to share our knowledge &  expriences</p>
 								</div>
 							</div>
@@ -57,8 +97,8 @@
 				</div><!-- /.row -->
 			</div><!-- /.container -->
 		</div><!-- /.about-area -->
-		
-		<div class="speakers-area white-bg" >
+
+		<div class="speakers-area gray-bg" >
 			<div class="container">
 				<div class="sub-heading">
 					<div class="row">
@@ -77,7 +117,7 @@
 									<div class="speakers-thought">
 										<p>{{ a.Deskripsi_singkat |truncatewords:20}}
 										</p>
-										<a href="" data-toggle="modal" data-target="#Speaker-1">More About Me</a>
+										<a href="" data-toggle="modal" data-target="#Speaker-{{ a.pk }}">More About Me</a>
 									</div>
 								</div>
 								<ul class="speaker-social">
@@ -87,7 +127,7 @@
 								</ul>
 								<h6>{{ a.Pekerjaan }}</h6>
 							</div>
-							<div class="modal fade" id="Speaker-1" tabindex="-1">
+							<div class="modal fade" id="Speaker-{{ a.pk }}" tabindex="-{{ a.pk }}">
 								<div class="container">
 									<div class="row">
 										<div class="col-md-2"></div>
@@ -134,7 +174,7 @@
 		</div><!-- /.speakers-area -->
 <div>
 </div>
-		<div class="schedule-area gray-bg">
+		<div class="schedule-area white-bg">
 			<div class="container">
 				<div class="sub-heading">
 					<div class="row">
@@ -324,7 +364,7 @@
 			</div>
 		</div><buy-tickit-area -->
 		
-		<div class="sponsors-area">
+		<div class="sponsors-area gray-bg">
 			<div class="container">
 				<div class="sub-heading">
 					<div class="row">
@@ -523,12 +563,12 @@
 		</div><!-- /.sponsors-area -->
 
 		
-		<div class="contact-area gray-bg">
+		<div class="contact-area white-bg">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8">
 						<div class="location-card mb30 primary-shadow">
-							<img src="{% static 'web/images/contact/location.jpg' %}" alt="location" />
+							<div style="width: 100%"><iframe width="770" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=770&amp;hl=en&amp;q=Jl.%20Jend.%20Sudirman%20No.51,%20RT.5/RW.4,%20Karet%20Semanggi,%20Kecamatan%20Setiabudi,%20Kota%20Jakarta%20Selatan,%20Daerah%20Khusus%20Ibukota%20Jakarta%2012930+(unika%20atma%20jaya)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div>
 							<div class="overlay"></div>
 							<div class="location-info">
 								<h6>Unika Atma Jaya</h6>

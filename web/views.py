@@ -24,11 +24,13 @@ def Home(request):
     return render(request, "web/index.html", context)
 
 def event(request):
-    event = Event.objects.all()
+    eventday1 = Event.objects.filter(Mulai__date=datetime.date(2021, 11, 24))
+    eventday2 = Event.objects.filter(Mulai__date=datetime.date(2021, 11, 25))
 
 
     context = {
-        "event": event,
+        "event": eventday2,
+        "eventdate": eventday1,
 
     }
     return render(request, "web/schedule.html", context)

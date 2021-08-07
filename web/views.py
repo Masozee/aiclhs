@@ -45,6 +45,17 @@ def Speakers(request):
     }
     return render(request, "web/speakers.html", context)
 
+def Teams(request):
+    teams = team.objects.all()
+    scientific = team.objects.filter(scientific_coord=True)
+    context = {
+
+        "teams": teams,
+        "scientific": scientific,
+
+    }
+    return render(request, "web/teams.html", context)
+
 def Tulisan(request):
     artikel = Artikel.objects.all()
 

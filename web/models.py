@@ -100,3 +100,19 @@ class Sponsor(models.Model):
 
     def __str__(self):
         return self.nama
+
+class team(models.Model):
+    nama = models.CharField(max_length=100)
+    panggilan = models.CharField(max_length=30, blank=True)
+    jabatan = models.CharField(max_length=150, blank=True)
+    foto = models.ImageField(upload_to='web/teams/', blank=True)
+    keterangan = models.TextField(blank=True)
+    no_urut = models.PositiveIntegerField(blank=True)
+    scientific_coord = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.nama
+
+    class Meta:
+        verbose_name = ("team")
+        verbose_name_plural = ("teams")

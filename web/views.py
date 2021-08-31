@@ -10,16 +10,21 @@ def Home(request):
 
     eventday1 = Event.objects.filter(Mulai__date= datetime.date(2021, 11, 24))
     eventday2 = Event.objects.filter(Mulai__date= datetime.date(2021, 11, 25))
-    pembicara = Pembicara.objects.all().distinct()[:4]
+    keynote = Pembicara.objects.filter(keynote=True).order_by('Nama').distinct()[:4]
+    pembicara = Pembicara.objects.filter(keynote=False).order_by('Nama').distinct()[:4]
+    scientific = Sponsor.objects.all().order_by('nama')
+    dates = importantdates.objects.all().order_by('urutan')
 
     artikel = Artikel.objects.all().distinct()[:3]
 
     context = {
         "event": eventday2,
         "eventdate": eventday1,
+        "keynote": keynote,
         "pembicara": pembicara,
-
+        "scientific": scientific,
         "artikel": artikel,
+        "dates": dates,
     }
     return render(request, "web/index.html", context)
 

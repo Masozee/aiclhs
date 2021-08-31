@@ -6,6 +6,7 @@ from taggit.managers import TaggableManager
 # Create your models here.
 class Pembicara(models.Model):
     Nama = models.CharField(max_length=100)
+    panggilan = models.CharField(max_length=30, blank=True)
     Slug = models.SlugField(default='', editable=False, max_length=140)
     Pekerjaan = models.CharField(max_length=100)
     Perusahaan = models.CharField(max_length=100)
@@ -116,3 +117,15 @@ class team(models.Model):
     class Meta:
         verbose_name = ("team")
         verbose_name_plural = ("teams")
+
+class importantdates(models.Model):
+    Judul =models.CharField(max_length=150)
+    Tanggal = models.CharField(max_length=50)
+    urutan =models.PositiveIntegerField(blank=True)
+
+    def __str__(self):
+        return self.Judul
+
+    class Meta:
+        verbose_name = ("tanggal penting")
+        verbose_name_plural = ("tanggal penting")

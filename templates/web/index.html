@@ -29,14 +29,14 @@
 							<img src="{% static 'web/images/bg/poster.png' %}" alt="video-intro" />
 					</div>
 					<div class="col-md-6">
-						<div class="about-text">	
+						<div class="about-text">
 							<h4>About The Event</h4>
 							<p>When Covid-19 struck in the middle of 2020, Several countries have adopted new adaptation strategies in fighting the pandemic in the year 2021,  Many countries implement adaptation methods such as making vaccines available to their citizens through thorough distribution.  Including indonesia, while Indonesia doesn't self-produce vaccines, the country proclaimed itself to be the fourth country to do mass vaccinations among its citizens. but Whether Indonesia and the international community are doing enough.</p>
                             <p>The incident above is part of the human security problem.  "Human Security," freedom from fear, and the freedom of desires along with this concept were then added as the cornerstones of this concept. Consequently, we can recognize an important paradigm shift between "security" and "development". Individuals will now take center stage, demonstrating the previously state-centric nature of the previous approach.
                             The key message from the International Conference is highlighted by this exhortation. As discussed above, Human Security is both development and protection, which encompasses widespread and non-military security concerns. based on the background Human Security will be the topic of the International Conference on "International Conference On Current Legal Issue And Human Security"
                             </p>
                             <div class="become-sponsor">
-                                <a href="{% url 'about' %}" class="button alt" >Read more</a>
+                                <a href="{% static 'web/doc/poster.pdf' %}" class="button alt" >Read more</a>
                             </div>
 						</div>
 					</div>
@@ -67,17 +67,22 @@
 							</div>
 							<div class="col-sm-3 card-tema">
 								<div class="single-about primary-shadow white-bg">
-									<h5>Human Security & Gender Issue</h5>
+									<h5>Human Security and Gender, Minorities Issues</h5>
                                 </div>
 							</div>
 							<div class="col-sm-3 card-tema">
 								<div class="single-about primary-shadow white-bg">
-									<h5>Human Security on minorities</h5>
+									<h5>Human Security and Criminal Justice</h5>
                                 </div>
 							</div>
 							<div class="col-sm-3 card-tema">
 								<div class="single-about primary-shadow white-bg">
-									<h5>Human Security on Technology</h5>
+									<h5>Human Security on Health and Mental Health</h5>
+                                </div>
+							</div>
+							<div class="col-sm-3 card-tema">
+								<div class="single-about primary-shadow white-bg">
+									<h5>Human Security and Information technology</h5>
                                 </div>
 							</div>
 							<div class="col-sm-3 card-tema">
@@ -95,36 +100,115 @@
 				</div><!-- /.row -->
 			</div><!-- /.container -->
 		</div><!-- /.about-area -->
-		<div class="speakers-area gray-bg" >
+        <div class="featured-speakers-area gray-bg mb-30">
 			<div class="container">
 				<div class="sub-heading">
 					<div class="row">
 						<div class="col-md-12">
-							<h4>Our Speakers</h4>
+							<h4>Keynote Speaker</h4>
 						</div>
 					</div>
 				</div>
 				<div class="row">
+                    {% for a in keynote %}
+					<div class="col-md-6">
+						<div class="single-featured-speaker primary-shadow white-bg">
+							<div class="row no-margin">
+								<div class="col-sm-6 no-padding">
+									<div class="speaker-cover">
+										<img src="/media/{{ a.Foto }}" alt="speakers" height="300px"/>
+										<div class="speaker-over">
+											<ul>
+												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+												<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+												<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6 no-padding">
+									<div class="about-speaker">
+										<h6>{{ a.Pekerjaan }}</h6>
+										<h4>{{ a.Nama }}</h4>
+										<p>{{ a.Keterangan |truncatewords:10 }}</p>
+										<a href="" data-toggle="modal" data-target="#fSpeaker-{{ a.id }}">More About Me</a>
+									</div>
+								</div>
+								<div class="modal fade" id="fSpeaker-{{ a.id }}" tabindex="-1">
+									<div class="container">
+										<div class="row">
+											<div class="col-md-2"></div>
+											<div class="col-md-8">
+												<div class="speaker-details white-bg primary-shadow">
+													<div class="row no-margin">
+														<div class="col-sm-5 no-padding">
+															<div class="speaker-images-slider">
+																<img src="/media/{{ a.Foto }}" alt="speaker" />
+															</div>
+														</div>
+														<div class="col-sm-7 no-padding">
+															<div class="speaker-details-texts">
+																<div class="sdt-top">
+																	<h4>{{ a.Nama }}</h4>
+																	<h6>{{ a.Pekerjaan }}</h6>
+																	<ul>
+																		<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+																		<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+																		<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+																	</ul>
+																</div>
+																<div class="sdt-bottom">
+																	<p>{{ a.keterangan }}</p>
+																	<a href="" class="button alt small" data-dismiss="modal">Close</a>
+																</div>
+															</div>
+														</div>
+													</div><!-- /.row -->
+												</div><!-- /.speaker-details -->
+											</div>
+											<div class="col-md-2"></div>
+										</div><!-- /.row -->
+									</div><!-- /.container -->
+								</div><!-- /.modal -->
+							</div>
+						</div>
+					</div><!-- /.col -->
+                    {% endfor %}
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+		</div><!-- /.featured-speakers-area -->
+		<div class="speakers-area gray-bg">
+			<div class="container">
+				<div class="sub-heading">
+                    <div class="row">
+						<div class="col-md-12">
+							<h4>Speakers</h4>
+						</div>
+					</div>
+                    <br>
+				</div>
+				<div class="row">
                     {% for a in pembicara %}
+
 					<div class="col-md-3 col-sm-6 mb30">
-						<div class="single-speaker primary-shadow white-bg" >
-							<div class="speaker-cover" style="height: 250px;">
-								<img src="/media/{{ a.Foto }}" alt="cover" style="object-fit: cover" />
+						<div class="single-speaker primary-shadow white-bg">
+							<div class="speaker-cover">
+								<img src="/media/{{ a.Foto }}" alt="cover" height="300px" />
 								<div class="sperker-cover-over">
 									<div class="speakers-thought">
-										<p>{{ a.Deskripsi_singkat |truncatewords:20}}
+										<p>{{ a.Keterangan | truncatewords:10 }}
 										</p>
-										<a href="" data-toggle="modal" data-target="#Speaker-{{ a.pk }}">More About Me</a>
+										<a href="" data-toggle="modal" data-target="#Speaker-{{ a.id }}">More About Me</a>
 									</div>
 								</div>
 								<ul class="speaker-social">
-									<li><a href="{{ a.Facebook }}"><i class="fa fa-facebook"></i></a></li>
-									<li><a href="{{ a.Twitter }}"><i class="fa fa-twitter"></i></a></li>
-									<li><a href="{{ a.Instagram }}"><i class="fa fa-instagram"></i></a></li>
+									<li><a href=""><i class="fa fa-facebook"></i></a></li>
+									<li><a href=""><i class="fa fa-twitter"></i></a></li>
+									<li><a href=""><i class="fa fa-dribbble"></i></a></li>
 								</ul>
-								<h6>{{ a.Pekerjaan }}</h6>
+								<h6>{{ a.jabatan }}</h6>
 							</div>
-							<div class="modal fade" id="Speaker-{{ a.pk }}" tabindex="-{{ a.pk }}">
+							<div class="modal fade" id="Speaker-{{ a.id }}" tabindex="-1">
 								<div class="container">
 									<div class="row">
 										<div class="col-md-2"></div>
@@ -133,7 +217,7 @@
 												<div class="row no-margin">
 													<div class="col-sm-6 no-padding">
 														<div class="speaker-images-slider">
-															<img src="/media/{{ a.Foto }}" alt="speaker" />
+															<img src="/media/{{ a.Foto }}" alt="speaker" height="400px"/>
 														</div>
 													</div>
 													<div class="col-sm-6 no-padding">
@@ -142,13 +226,13 @@
 																<h4>{{ a.Nama }}</h4>
 																<h6>{{ a.Pekerjaan }}</h6>
 																<ul>
-																	<li><a href="{{ a.Facebook }}"><i class="fa fa-facebook"></i></a></li>
-																	<li><a href="{{ a.Twitter }}"><i class="fa fa-twitter"></i></a></li>
-																	<li><a href="{{ a.Instagram }}"><i class="fa fa-instagram"></i></a></li>
+																	<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+																	<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+																	<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
 																</ul>
 															</div>
 															<div class="sdt-bottom">
-																<p>{{ a.Deskripsi_singkat }}</p>
+																<p>{{ a.Keterangan }}</p>
 																<a href="" class="button alt small" data-dismiss="modal">Close</a>
 															</div>
 														</div>
@@ -161,272 +245,66 @@
 								</div><!-- /.container -->
 							</div><!-- /.modal -->
 							<div class="speaker-name">
-								<h5 title="{{ a.Nama }}">{{ a.Nama }}</h5>
+								<h5 title="{{ a.panggilan }}">{{ a.panggilan }}</h5>
 							</div>
 						</div><!-- /.single-speaker -->
 					</div><!-- /.col -->
+
                     {% endfor %}
-				</div><!-- /.row -->
 			</div><!-- /.container -->
 		</div><!-- /.speakers-area -->
-        <div class="important-dates " id="work">
+        </div>
+        <div class="important-dates " id="date">
            <div class="container">
                 <div class="sub-heading">
 						<div class="row">
 							<div class="col-md-12">
-								<h4>Importantd Date and Time</h4>
+								<h4>Important Dates</h4>
 							</div>
 						</div>
 					</div>
 				<div class="row">
 					<div class="col-md-12">
 						<div class="row">
+                            {% for e in dates %}
 							<div class="col-sm-3 card-tema">
 								<div class="single-about primary-shadow white-bg">
-									<h5>Time of Conference</h5>
-									<p>24-25 November 2021</p>
+									<h5>{{ e.Judul }}</h5>
+									<p>{{ e.Tanggal }}</p>
 								</div>
 							</div>
-							<div class="col-sm-3 card-tema">
-								<div class="single-about primary-shadow white-bg">
-									<h5>Abstract Submission</h5>
-									<p>July 26th,2021 - September 17th, 2021</p>
-								</div>
-							</div>
-							<div class="col-sm-3 card-tema">
-								<div class="single-about primary-shadow white-bg">
-									<h5>Announcement Abstract</h5>
-									<p>Until September 24th, 2021</p>
-								</div>
-							</div>
-							<div class="col-sm-3 card-tema">
-								<div class="single-about primary-shadow white-bg">
-									<h5>Full Paper Submission</h5>
-									<p>November 30th, 2021</p>
-								</div>
-							</div>
+                            {% endfor %}
 						</div>
 					</div>
 				</div><!-- /.row -->
 			</div><!-- /.container -->
         </div>
-        <div class="registration gray-bg">
-			<div class="container">
-                <div class="sub-heading">
-                    <div class="row">
-							<div class="col-md-12">
-								<h4>REGISTRATION AND PUBLICATION FEE </h4>
-							</div>
-						</div>
-                </div>
-				    <table class="table">
-                        <thead class="gray-bg">
-                          <tr>
-                            <th class="tg-c3ow"></th>
-                            <th class="tg-roi2">   <br><span style="color:black">Early Bird   Fee</span>   </th>
-                            <th class="tg-roi2">   <br><span style="color:black">Regular   Fee</span>   </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td class="tg-lboi">&nbsp;&nbsp;&nbsp;<br><span style="color:black">Conference Registration for Participants and Presenters</span>&nbsp;&nbsp;&nbsp;</td>
-                            <td class="tg-9wq8">&nbsp;&nbsp;&nbsp;<br><span style="color:black">Free</span>&nbsp;&nbsp;&nbsp;</td>
-                            <td class="tg-9wq8">&nbsp;&nbsp;&nbsp;<br><span style="color:black">Free</span>&nbsp;&nbsp;&nbsp;</td>
-                          </tr>
-                          <tr>
-                            <td class="tg-7btt text-center gray-bg" colspan="10">Publication Fee (Optional for Presenters)</td>
-                          </tr>
-                          <tr>
-                            <td class="tg-lboi">&nbsp;&nbsp;&nbsp;<br><span style="color:black">Conference Proceeding (Scopus-indexed)</span><br><span style="color:black">(moderated by   Atlantic Press)</span>   &nbsp;&nbsp;&nbsp;</td>
-                            <td class="tg-9wq8">&nbsp;&nbsp;&nbsp;<br><span style="color:black">USD 150</span><br>&nbsp;&nbsp;&nbsp;<br><span style="color:black">(until 24 September)</span>&nbsp;&nbsp;&nbsp;</td>
-                            <td class="tg-9wq8">&nbsp;&nbsp;&nbsp;<br><span style="color:black">USD 170</span><br>&nbsp;&nbsp;&nbsp;<br><span style="color:black">(until 20 November)</span>&nbsp;&nbsp;&nbsp;</td>
-                          </tr>
-                          <tr>
-                            <td class="tg-lboi">&nbsp;&nbsp;&nbsp;<br><span style="color:black">Journal Article (Scopus-indexed)</span>&nbsp;&nbsp;&nbsp;</td>
-                            <td class="tg-9wq8" colspan="2">   <br><span style="color:black">Fees will be   determined upon submission to selected law journals </span><br>   </td>
-                          </tr>
-                        </tbody>
-                        </table>
-                    <h6>*payment method : Bank Transfer (IDR)  MANDIRI 1220004572452 a/n UNIKA ATMA JAYA JAKARTA</h6>
-                <br>
-			</div><!-- /.container -->
-		</div><!-- /.featured-speakers-area -->
-		<div class="schedule-area white-bg">
-		    <div class="container">
-		        <div class="sub-heading">
-					<div class="row">
-						<div class="col-md-12">
-							<h4>Our Schedule</h4>
-						</div>
-					</div>
-				</div>
-		        <div class="schedules">
-					<div class="row no-margin">
-						<div class="col-md-3 no-padding">
-							<div class="schedule-title">
-								<h5>Date</h5>
-							</div>
-							<div class="schedule-date">
-								<ul class="nav nav-tabs" role="tablist">
-									<li class="active">
-										<a href="#date-1" data-toggle="tab">
-											<h4>Day 1</h4>
-											<h5>November 24th, 2021 </h5>
-										</a>
-									</li>
-									<li>
-										<a href="#date-2" data-toggle="tab">
-											<h4>Day 2</h4>
-											<h5>November 25th, 2021 </h5>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="col-md-9 no-padding">
-
-							<div class="schedule-details">
-								<div class="schedule-title">
-									<div class="row no-margin">
-										<div class="col-sm-3 no-padding">
-											<h5>Time</h5>
-										</div>
-										<div class="col-sm-9 no-padding">
-											<h5>SESSION TITLE</h5>
-										</div>
-									</div>
-								</div>
-
-								<div class="tab-content">
-									<div role="tabpanel" class="tab-pane active" id="date-1">
-										<div class="panel-group" id="accordion" role="tablist">
-                                        {% for e in eventdate %}
-											<div class="single-schedule panel panel-default">
-												<div class="panel-heading" role="tab">
-												  <div class="panel-title single-schedule-title">
-													<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#schedule-1-{{ forloop.counter }}">
-                                                        <div class="row no-margin">
-															<div class="col-sm-3 no-padding">
-																<h5>{{ e.jammulai }} - {{ e.jamselesai }}</h5>
-                                                                <p></p>
-															</div>
-															<div class="col-sm-9 no-padding">
-																<h5>{{ e.Judul }}</h5>
-															</div>
-														</div>
-													</a>
-												  </div>
-												</div>
-                                                    {% if forloop.first %}
-												    <div id="schedule-1-{{ forloop.counter }}" class="panel-collapse collapse in" role="tabpanel">
-                                                    {% else %}
-                                                    <div id="schedule-1-{{ forloop.counter }}" class="panel-collapse collapse" role="tabpanel">
-                                                     {% endif %}
-													<div class="panel-body">
-														<div class="row no-margin">
-															<div class="col-sm-3 no-padding">
-																<div class="schedule-img">
-                                                                    {% if e.Pembicara.Foto %}
-																	<img src="/media/{{ e.Pembicara.Foto }}" alt="schedule" />
-                                                                    {% else %}
-																	<img src="{% static 'web/images/schedule/1.jpg' %}" alt="schedule" />
-                                                                    {% endif %}
-																</div>
-															</div>
-															<div class="col-sm-9 no-padding">
-																<div class="schedule-info">
-																	<p>{{ e.Keterangan }}</p>
-																	<h5><span>With</span> : {{ e.Pembicara }} <small>{{ e.Pembicara.Pekerjaan }} at <a href="">{{ e.Pembicara.Perusahaan }}</a></small></h5>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div><!-- /.single-schedule -->
-                                        {% endfor %}
-										</div><!-- /.panel-group -->
-                                    </div><!-- /.tab-pane -->
-
-									<div role="tabpanel" class="tab-pane" id="date-2">
-										<div class="panel-group" id="accordion-2" role="tablist">
-                                            {% for f in event %}
-											<div class="single-schedule panel panel-default">
-												<div class="panel-heading" role="tab">
-												  <div class="panel-title single-schedule-title">
-													<a class="collapsed" data-toggle="collapse" data-parent="#accordion-2" href="#schedule-2-{{ forloop.counter }}">
-														<div class="row no-margin">
-															<div class="col-sm-3 no-padding">
-																<h5>{{ f.jammulai }} - {{ f.jamselesai }}</h5>
-															</div>
-															<div class="col-sm-9 no-padding">
-																<h5>{{ f.Judul }}</h5>
-															</div>
-														</div>
-													</a>
-												  </div>
-												</div>
-												{% if forloop.first %}
-                                                    <div id="schedule-2-{{ forloop.counter }}" class="panel-collapse collapse in" role="tabpanel">
-                                                {% else %}
-                                                    <div id="schedule-2-{{ forloop.counter }}" class="panel-collapse collapse" role="tabpanel">
-                                                {% endif %}
-													<div class="panel-body">
-														<div class="row no-margin">
-															<div class="col-sm-3 no-padding">
-																<div class="schedule-img">
-                                                                    {% if f.Pembicara.Foto %}
-                                                                    <img src="/media/{{ f.Pembicara.Foto }}" alt="schedule" />
-                                                                    {% else %}
-																	<img src="{% static 'web/images/schedule/1.jpg' %}" alt="schedule" />
-                                                                    {% endif %}
-																</div>
-															</div>
-															<div class="col-sm-9 no-padding">
-																<div class="schedule-info">
-																	<p>{{ f.Keterangan }}</p>
-																	<h5><span>With</span> : {{ f.Pembicara }} <small>{{ f.Pembicara.Pekerjaan }} at <a href="">{{ f.Pembicara.Perusahaan }}</a></small></h5>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div><!-- /.single-schedule -->
-											{% endfor %}
-										</div><!-- /.panel-group -->
-									</div><!-- /.tab-pane -->
-
-								</div><!-- /.tab-content -->
-
-							</div><!-- /.schedule-details -->
-
-						</div><!-- /.col -->
-					</div><!-- /.row -->
-				</div><!-- /.schedules -->
-			</div>
-		</div><!-- /.schedule-area -->
-            </div>
-        </div>
-		<div class="sponsors-area gray-bg">
+        <div class="sponsors-area gray-bg" id="sponsor">
 			<div class="container">
 				<div class="sub-heading">
 					<div class="row">
 						<div class="col-md-12">
-							<h4>Our Sponsors</h4>
+							<h4>University Partner</h4>
 						</div>
 					</div>
 				</div>
-				
-				<div class="sponsors-nav">
-					<ul class="nav nav-tabs">
-						<li class="active"><a href="#SilverSponsors" data-toggle="tab">University Sponsors</a></li>
-						<li><a href="#GoldSponsors" data-toggle="tab">Corporate Sponsors</a></li>
-						<li><a href="#PlatinumSponsors" data-toggle="tab">Media Partner</a></li>
-					</ul>
-				</div>
+
 
 				<div class="tab-content sponsors-contents text-center">
 					<div role="tabpanel" class="tab-pane active" id="SilverSponsors">
+						<div class="row">
+							 {%  for e in scientific %}
+							<div class="col-md-3 col-sm-6 mb30 ">
+								<div class="single-sponsor primary-shadow white-bg scientificom">
+									<img src="/media/{{ e.logo }}" alt="sponsor" />
+                                    <h4>{{ e.nama }}</h4>
+								</div>
+							</div>
+                            {% endfor %}
+
+						</div>
+					</div><!-- /.tabpanel -->
+					<div role="tabpanel" class="tab-pane" id="GoldSponsors">
 						<div class="row">
 							<div class="col-md-3 col-sm-6 mb30">
 								<div class="single-sponsor primary-shadow white-bg">
@@ -435,36 +313,12 @@
 							</div>
 							<div class="col-md-3 col-sm-6 mb30">
 								<div class="single-sponsor primary-shadow white-bg">
-									<img src="{% static 'web/images/sponsor/2.png' %}" alt="sponsor" />
+									<img src="{% static 'web/images/sponsor/1.png' %}" alt="sponsor" />
 								</div>
 							</div>
 							<div class="col-md-3 col-sm-6 mb30">
 								<div class="single-sponsor primary-shadow white-bg">
-									<img src="{% static 'web/images/sponsor/3.png' %}" alt="sponsor" />
-								</div>
-							</div>
-							<div class="col-md-3 col-sm-6 mb30">
-								<div class="single-sponsor primary-shadow white-bg">
-									<img src="{% static 'web/images/sponsor/4.png' %}" alt="sponsor" />
-								</div>
-							</div>
-						</div>
-					</div><!-- /.tabpanel -->
-					<div role="tabpanel" class="tab-pane" id="GoldSponsors">
-						<div class="row">
-							<div class="col-md-3 col-sm-6 mb30">
-								<div class="single-sponsor primary-shadow white-bg">
-									<img src="{% static 'web/images/sponsor/4.png' %}" alt="sponsor" />
-								</div>
-							</div>
-							<div class="col-md-3 col-sm-6 mb30">
-								<div class="single-sponsor primary-shadow white-bg">
-									<img src="{% static 'web/images/sponsor/3.png' %}" alt="sponsor" />
-								</div>
-							</div>
-							<div class="col-md-3 col-sm-6 mb30">
-								<div class="single-sponsor primary-shadow white-bg">
-									<img src="{% static 'web/images/sponsor/2.png' %}" alt="sponsor" />
+									<img src="{% static 'web/images/sponsor/1.png' %}" alt="sponsor" />
 								</div>
 							</div>
 							<div class="col-md-3 col-sm-6 mb30">
@@ -476,35 +330,20 @@
 					</div><!-- /.tabpanel -->
 					<div role="tabpanel" class="tab-pane" id="PlatinumSponsors">
 						<div class="row">
+                            {%  for e in scientific %}
 							<div class="col-md-3 col-sm-6 mb30">
 								<div class="single-sponsor primary-shadow white-bg">
-									<img src="{% static 'web/images/sponsor/2.png' %}" alt="sponsor" />
+									<img src="/media/{{ e.logo }}" alt="sponsor" />
 								</div>
 							</div>
-							<div class="col-md-3 col-sm-6 mb30">
-								<div class="single-sponsor primary-shadow white-bg">
-									<img src="{% static 'web/images/sponsor/1.png' %}" alt="sponsor" />
-								</div>
-							</div>
-							<div class="col-md-3 col-sm-6 mb30">
-								<div class="single-sponsor primary-shadow white-bg">
-									<img src="{% static 'web/images/sponsor/4.png' %}" alt="sponsor" />
-								</div>
-							</div>
-							<div class="col-md-3 col-sm-6 mb30">
-								<div class="single-sponsor primary-shadow white-bg">
-									<img src="{% static 'web/images/sponsor/3.png' %}" alt="sponsor" />
-								</div>
-							</div>
+                            {% endfor %}
+
 						</div>
 					</div><!-- /.tabpanel -->
 				</div><!-- /.tab-content -->
-				
-
-				
 			</div><!-- /.container -->
 		</div><!-- /.sponsors-area -->
-		<div class="contact-area ">
+		<div class="contact-area white-bg ">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8">
@@ -571,4 +410,4 @@
 				</div><!-- /.row -->
 			</div><!-- /.container -->
 		</div><!-- /.contact-area -->
-{% endblock %}
+{% endblock %} 
